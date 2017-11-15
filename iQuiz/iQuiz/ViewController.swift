@@ -11,9 +11,10 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // handle the fact that the user tapped button # indexPath.row
+        performSegue(withIdentifier: "cellToq", sender: self)
     }
- 
+    
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
         NSLog("indexPath: \(indexPath)")
         var cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath)
