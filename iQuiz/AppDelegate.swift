@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let subtitle = ["Testing Mathematics", "Testing Science", "Superhero Trivia"]
     let images = [UIImage(named: "icons8-math-filled"), UIImage(named: "icons8-test-tube-filled"), UIImage(named: "icons8-superman-filled")]
     
+   
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true

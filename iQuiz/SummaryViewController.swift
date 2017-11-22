@@ -1,5 +1,5 @@
 //
-//  ResultViewController.swift
+//  SummaryViewController.swift
 //  iQuiz
 //
 //  Created by iGuest on 11/14/17.
@@ -8,23 +8,20 @@
 
 import UIKit
 
-class ResultViewController: UIViewController {
-    var isTrue = false
-    var corranswer = ""
+class SummaryViewController: UIViewController {
+    var right = 0
+    var total = 0
     
-    @IBOutlet weak var indicateMessage: UILabel!
-    @IBOutlet weak var correctAnswer: UILabel!
-
-
+ 
+    @IBOutlet weak var summary: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSLog(corranswer)
-        correctAnswer.text = corranswer
-        if isTrue == false {
-            indicateMessage.text = "You got it wrong"
+        if right/total < 1 {
+           summary.text = "You got \(right) out of \(total) correct. Try harder!"
         } else {
-            indicateMessage.text = "You got it right!"
+            summary.text = "You got \(right) out of \(total) correct. Nice job!"
         }
+        
 
         // Do any additional setup after loading the view.
     }
