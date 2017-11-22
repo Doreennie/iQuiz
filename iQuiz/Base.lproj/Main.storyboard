@@ -10,6 +10,44 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="akj-34-NI9">
+            <objects>
+                <viewController id="bH5-e7-8RZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RMw-N6-1gH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxg-uf-jET">
+                                <rect key="frame" x="163" y="394" width="49" height="14"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submit:" destination="woW-C2-652" eventType="touchUpInside" id="rVo-iw-jzk"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WWj-5J-I6Q">
+                                <rect key="frame" x="139" y="318" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sxg-uf-jET" firstAttribute="centerX" secondItem="RMw-N6-1gH" secondAttribute="centerX" id="Iiq-xQ-caf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3jS-p2-4Aj"/>
+                    </view>
+                    <connections>
+                        <segue destination="Bh1-VB-jSr" kind="show" id="NC6-np-ZiJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KeL-48-a4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="woW-C2-652" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-388" y="115.59220389805098"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="uzc-W7-oAw">
             <objects>
                 <viewController id="Bh1-VB-jSr" customClass="ViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,7 +66,7 @@
                                         <barButtonItem title="Settings" id="wfl-SQ-EQ7">
                                             <connections>
                                                 <action selector="Setting:" destination="Bh1-VB-jSr" id="cRI-Cs-pr5"/>
-                                                <segue destination="hWp-Ko-dI6" kind="popoverPresentation" identifier="popover" popoverAnchorBarButtonItem="wfl-SQ-EQ7" id="RgD-CB-xA6">
+                                                <segue destination="bH5-e7-8RZ" kind="popoverPresentation" identifier="popover" popoverAnchorBarButtonItem="wfl-SQ-EQ7" id="bXl-2V-9p3">
                                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                 </segue>
                                             </connections>
@@ -65,21 +103,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bO5-Bf-r99" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="456.80000000000001" y="118.29085457271366"/>
-        </scene>
-        <!--PopoverViewController-->
-        <scene sceneID="Zky-jD-Keb">
-            <objects>
-                <viewController title="PopoverViewController" id="hWp-Ko-dI6" customClass="ViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zIE-BM-lsg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="WDs-bC-y9P"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gBa-q3-Y1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-314" y="118"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="yKp-MJ-6JR">
@@ -251,6 +274,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ji2-tI-MQb"/>
+        <segue reference="NC6-np-ZiJ"/>
     </inferredMetricsTieBreakers>
 </document>

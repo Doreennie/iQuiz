@@ -18,8 +18,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var subtitle = [String]()
     var questions = [Any]()
     var test = Array<[String : Any]>()
+    var textInput = ""
     
     
+    @IBAction func submit(_ sender: Any) {
+        
+    }
+
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "cellToq", sender: self)
     }
@@ -34,15 +39,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             controller.questions = [qCategory]
             
         }
-        
-        if(segue.identifier == "popover") {
-            let popoverViewController = segue.destination as! ViewController
+        if segue.identifier == "popover" {
+            let popoverViewController = segue.destination
             popoverViewController.modalPresentationStyle = UIModalPresentationStyle.popover
-            popoverViewController.popoverPresentationController!.delegate = self as UIPopoverPresentationControllerDelegate
+            popoverViewController.popoverPresentationController!.delegate = self
+            
         }
     }
     
-   
+ 
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
+    }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
         var cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath)
@@ -72,8 +81,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "subjectCell")
         getJsonFromUrl(JSON_URL: url_string)
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
